@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    grid-gap: 1px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px; /* Adjust max-width as needed */
+    box-sizing: border-box;
+}
+
+.cell {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Maintain aspect ratio */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cell::before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* Maintain aspect ratio */
+}
+
+.cell.start {
+    background-color: green;
+}
+
+.cell.goal {
+    background-color: red;
+}
+
+.cell.visited {
+    background-color: lightgray;
+}
+
+.cell.path {
+    background-color: lightblue;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#timer {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    #grid {
+        grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+    }
+    
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #timer {
+        font-size: 16px;
+    }
+}

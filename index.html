@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <canvas id="grid"></canvas>
+    <button onclick="startAlgorithm('aStar')">Start A* Algorithm</button>
+    <button onclick="startAlgorithm('bfs')">Start BFS Algorithm</button>
+    <button onclick="startAlgorithm('dfs')">Start DFS Algorithm</button>
+    <button onclick="startAlgorithm('dijkstra')">Start Dijkstra's Algorithm</button>
+    <button onclick="startAlgorithm('bestFirst')">Start Greedy Best-First Search</button>
+    <button onclick="startAlgorithm('bidirectional')">Start Bidirectional BFS</button>
+
+    <div id="canvas-container">
+    <canvas id="grid"></canvas>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
