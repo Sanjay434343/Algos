@@ -3,23 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pathfinding Visualization</title>
     <link rel="stylesheet" href="styles.css">
-   
+    <title>Pathfinding Visualizer</title>
+    <style>
+        /* Add basic styles for the canvas and buttons */
+        #grid {
+            border: 1px solid black;
+        }
+        button {
+            margin: 5px;
+        }
+        /* Modal styles */
+        #resultModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        #resultModal .modal-content {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <canvas id="grid"></canvas>
-    <button onclick="startAlgorithm('aStar')">Start A* Algorithm</button>
-    <button onclick="startAlgorithm('bfs')">Start BFS Algorithm</button>
-    <button onclick="startAlgorithm('dfs')">Start DFS Algorithm</button>
-    <button onclick="startAlgorithm('dijkstra')">Start Dijkstra's Algorithm</button>
-    <button onclick="startAlgorithm('bestFirst')">Start Greedy Best-First Search</button>
-    <button onclick="startAlgorithm('bidirectional')">Start Bidirectional BFS</button>
+    <div>
+        <button id="aStarButton">A*</button>
+        <button id="bfsButton">BFS</button>
+        <button id="dfsButton">DFS</button>
+        <button id="dijkstraButton">Dijkstra</button>
+        <button id="bestFirstButton">Best-First</button>
+        <button id="bidirectionalBFSButton">Bidirectional BFS</button>
+        <button id="blockButton">Place Block</button>
 
-    <div id="canvas-container">
-    <canvas id="grid"></canvas>
-</div>
-
+    </div>
+    <div id="resultModal">
+        <div class="modal-content">
+            <p id="resultText"></p>
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
